@@ -49,6 +49,7 @@
       weather = "curl https://wttr.in/?0";
       get = "curl -LO";
       sudo = "doas";
+      ytAudio = "yt-dlp -f bestaudio -o '%(title)s.%(ext)s' -x --audio-format best";
     };
 
     initExtra = ''
