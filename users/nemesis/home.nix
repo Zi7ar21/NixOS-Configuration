@@ -37,6 +37,7 @@
     gnome3.dconf
     jq
     yt-dlp
+    podman-compose
   ];
 
   home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
@@ -50,6 +51,7 @@
       get = "curl -LO";
       sudo = "doas";
       ytAudio = "yt-dlp -f bestaudio -o '%(title)s.%(ext)s' -x --audio-format best";
+      docker-compose = "podman-compose";
     };
 
     initExtra = ''
