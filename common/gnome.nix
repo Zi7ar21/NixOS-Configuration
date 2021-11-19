@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 {
 
+  services.gvfs = {
+    enable = true;
+    package = pkgs.gnome3.gvfs;
+  };
+
   programs.dconf.enable = true;
   xdg.portal.enable = true;
   

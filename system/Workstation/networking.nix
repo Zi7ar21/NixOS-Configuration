@@ -36,4 +36,19 @@
     address = "10.20.2.254";
     prefixLength = 24;
   }];
+
+  networking.wireguard.interfaces = {
+    wg0 = {
+      ips = [ "10.200.200.2/24" ];
+      privateKeyFile = "/root/wireguard/private.key";
+      peers = [
+        {
+          publicKey = "K7HNf1Wjw/4vZLZYvbwiDhE3QIYghJNurZIHkMEwj0A=";
+          allowedIPs = [ "10.200.200.0/24" ];
+          endpoint = "abbasg.com:51820";
+          persistentKeepalive = 25;
+        }
+      ];
+    };
+  };
 }
