@@ -4,18 +4,17 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-21.05";
     home-manager.url = "github:nix-community/home-manager/release-21.05";
+    nur.url = "github:nix-community/NUR";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, nur, home-manager, ... }:
   let 
     system = "x86_64-linux";
-
     pkgs = import nixpkgs {
       inherit system;
     };
     lib = nixpkgs.lib;
-
   in {
     homeConfigurations = {
       nemesis = home-manager.lib.homeManagerConfiguration {
@@ -26,6 +25,7 @@
         configuration = {
           imports = [
             ./users/nemesis/home.nix
+            { nixpkgs.overlays = [ nur.overlay ]; }
           ];
         };
       };

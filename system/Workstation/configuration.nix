@@ -10,6 +10,7 @@
       ../../common/gnome.nix
       ../../common/virt.nix
       ../../common/globalPackages.nix
+#      ../../common/security.nix
       ./boot.nix
       ./networking.nix
     ];
@@ -28,7 +29,7 @@
     pulse.enable = true;
   };
 
-  services.openssh.enable = true;
+#  services.openssh.enable = true;
   
   users.users.nemesis = {
     isNormalUser = true;

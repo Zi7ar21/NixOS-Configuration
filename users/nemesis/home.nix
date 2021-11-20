@@ -1,4 +1,4 @@
-{ config, pkgs, nur, ... }:
+{ config, lib, pkgs, ... }:
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -23,7 +23,6 @@
     OVMF
     xdg-utils
     gnupg
-    bash
     cava
     element-desktop
     gsettings-desktop-schemas
@@ -38,11 +37,19 @@
     jq
     yt-dlp
     podman-compose
+    pandoc
   ];
 
   home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
 
   xdg.mime.enable = true;
+
+  services.gpg-agent = {
+    enable = true;
+    pinentryFlavor = "gnome3";
+    enableSshSupport = true;
+    sshKeys = [ "3141387B309EBA5CD4C508AB40E30F8760283127" ];
+  };
 
   programs.bash = {
     enable = true;
@@ -71,11 +78,6 @@
   programs.direnv.nix-direnv.enable = true;
   # optional for nix flakes support
   programs.direnv.nix-direnv.enableFlakes = true;
-
-  services.gpg-agent = {
-    enable = true;
-    pinentryFlavor = "gnome3";
-  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
