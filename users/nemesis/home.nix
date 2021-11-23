@@ -37,6 +37,7 @@
     jq
     yt-dlp
     podman-compose
+    unstable.podman
     pandoc
   ];
 
