@@ -36,8 +36,7 @@
     gnome3.dconf
     jq
     yt-dlp
-    podman-compose
-    unstable.podman
+    unstable.podman-compose
     pandoc
   ];
 

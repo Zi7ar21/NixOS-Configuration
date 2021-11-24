@@ -43,6 +43,13 @@
           ./system/Workstation/configuration.nix
         ];
       };
+
+      Serverinet = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./system/Serverinet/configuration.nix
+        ];
+      };      
     };
   };
 }
