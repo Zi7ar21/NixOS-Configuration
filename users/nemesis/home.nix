@@ -139,7 +139,7 @@
 
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = "gnome3";
+    pinentryFlavor = "tty";
     enableSshSupport = true;
     sshKeys = [ "3141387B309EBA5CD4C508AB40E30F8760283127" ];
   };
