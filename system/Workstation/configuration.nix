@@ -7,10 +7,9 @@
       ../../common/ssd.nix
       #./vfio.nix # Only enabled when I need a Windows VM. Comment out amdgpu.nix if enabled.
       ../../common/amdgpu.nix
-      ../../common/gnome.nix
-      ../../common/virt.nix
+      #../../common/gnome.nix
+      #../../common/virt.nix
       ../../common/globalPackages.nix
-#      ../../common/security.nix
       ./boot.nix
       ./networking.nix
     ];

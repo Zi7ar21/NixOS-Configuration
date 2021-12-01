@@ -51,4 +51,11 @@
       ];
     };
   };
+  networking.extraHosts =
+  ''
+    127.0.0.1 greg.192.168.1.126.nip.io
+    127.0.0.1 api.greg.192.168.1.126.nip.io
+    127.0.0.1 assets.greg.192.168.1.126.nip.io
+    127.0.0.1 stel.greg.192.168.1.126.nip.io
+  '';
 }
