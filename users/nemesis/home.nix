@@ -64,6 +64,7 @@
         "Mod4+8" = "workspace number 8";
         "Mod4+9" = "workspace number 9";
 
+        "Print" = "exec grim -g \"$(slurp -d)\" - | wl-copy";
         "Mod4+Shift+1" =
             "move container to workspace number 1";
         "Mod4+Shift+2" =
@@ -104,6 +105,8 @@
     neofetch
     aria2
     source-code-pro
+    noto-fonts
+    roboto
     xdg-desktop-portal-wlr
     mpv
     lm_sensors
@@ -131,6 +134,9 @@
     alacritty
     slurp
     grim
+    libressl
+    ffmpeg-full
+    bc
   ];
 
   home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
@@ -139,7 +145,7 @@
 
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = "tty";
+    pinentryFlavor = "curses";
     enableSshSupport = true;
     sshKeys = [ "3141387B309EBA5CD4C508AB40E30F8760283127" ];
   };
