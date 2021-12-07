@@ -2,9 +2,9 @@
   description = "NixOS conf";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-21.05";
+    nixpkgs.url = "nixpkgs/nixos-21.11";
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-21.05";
+    home-manager.url = "github:nix-community/home-manager/release-21.11";
     nur.url = "github:nix-community/NUR";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -25,7 +25,7 @@
         inherit system pkgs;
         username = "nemesis";
         homeDirectory = "/home/nemesis";
-        stateVersion = "21.05";
+        stateVersion = "21.11";
         configuration = {
           imports = [
             ./users/nemesis/home.nix

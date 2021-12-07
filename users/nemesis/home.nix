@@ -15,6 +15,12 @@
     config = {
       bars = [];
       modifier = "Mod4";
+      input = {
+        "*" = {
+          xkb_layout = "us,iq";
+          xkb_options = "grp:rctrl_toggle";
+        };
+      };
       window = {border = 3;};
       gaps = {
         inner = 5;
@@ -104,9 +110,13 @@
     vscodium
     neofetch
     aria2
+
     source-code-pro
     noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
     roboto
+
     xdg-desktop-portal-wlr
     mpv
     lm_sensors
@@ -140,7 +150,7 @@
   ];
 
   home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
-
+  fonts.fontconfig.enable = true;
   xdg.mime.enable = true;
 
   services.gpg-agent = {
@@ -186,5 +196,5 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.05";
+  home.stateVersion = "21.11";
 }

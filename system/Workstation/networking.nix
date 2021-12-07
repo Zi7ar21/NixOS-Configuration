@@ -12,11 +12,12 @@
     genMGMT = { id=300; interface="enp9s0"; };
     bridgeMGMT = { id=1001; interface="enp9s0"; };
     apMGMT = { id=202; interface="enp9s0"; };
+    #vpn = { id=500; interface="enp9s0"; };
   };
 
   networking.interfaces.enp9s0.useDHCP = false;
-  networking.interfaces.wlp7s0.useDHCP = false;
   networking.interfaces.lan.useDHCP = true;
+  #networking.interfaces.vpn.useDHCP = true;
   networking.interfaces.bridgeMGMT.useDHCP = false;
   networking.interfaces.apMGMT.useDHCP = false;
   networking.interfaces.genMGMT.useDHCP = false;
