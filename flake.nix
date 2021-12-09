@@ -40,16 +40,22 @@
       Workstation = lib.nixosSystem {
         inherit system;
         modules = [
+          # System related
+          ./system/Workstation/hardware-configuration.nix
+          ./system/Workstation/boot.nix
+          ./system/Workstation/networking.nix
+          ./system/Workstation/vfio.nix # Only enabled when I need a Windows VM. Comment out amdgpu.nix if enabled.      
           ./system/Workstation/configuration.nix
+          
+          # Common modules  
+          ./common/ssd.nix
+          ./common/opengl.nix
+         #./common/amdgpu.nix
+          ./common/gnome.nix
+          ./common/virt.nix
+          ./common/globalPackages.nix
         ];
-      };
-
-      Serverinet = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./system/Serverinet/configuration.nix
-        ];
-      };      
+      };   
     };
   };
 }

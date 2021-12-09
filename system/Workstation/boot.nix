@@ -4,10 +4,15 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackagesFor ( pkgs.linux_latest.override {
+    environment.systemPackages = [
+      config.boot.kernelPackages.systemtap
+    ];
+
+  boot.kernelPackages = pkgs.linuxPackagesFor ( pkgs.linux.override {
     structuredExtraConfig = with lib.kernel; {
-      MPTCP     =yes;
-      MPTCP_IPV6=yes;
+      MPTCP = yes;
+      MPTCP_IPV6 = yes;
+      KALLSYMS_ALL = yes;
     };
   });
   boot.initrd.luks.devices.luksroot = {
