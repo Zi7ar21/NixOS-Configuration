@@ -15,5 +15,9 @@
   services.gnome.gnome-keyring.enable = lib.mkForce false;
   security.pam.services.lightdm.enableGnomeKeyring = false;
   programs.ssh.startAgent = true;
-  environment.gnome.excludePackages = [ pkgs.gnome.cheese pkgs.gnome-photos pkgs.gnome.gnome-music pkgs.gnome.gedit pkgs.epiphany pkgs.evince pkgs.gnome.gnome-characters pkgs.gnome.totem pkgs.gnome.tali pkgs.gnome.iagno pkgs.gnome.hitori pkgs.gnome.atomix pkgs.gnome-tour ];
+  services.gnome.core-utilities.enable = false;
+  environment.systemPackages = with pkgs; [
+    gnome3.gnome-tweaks
+    gnome3.gnome-screenshot
+  ];
 }

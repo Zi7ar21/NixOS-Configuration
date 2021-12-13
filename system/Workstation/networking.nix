@@ -38,6 +38,7 @@
     prefixLength = 24;
   }];
 
+
   networking.wireguard.interfaces = {
     wg0 = {
       ips = [ "10.200.200.2/24" ];
